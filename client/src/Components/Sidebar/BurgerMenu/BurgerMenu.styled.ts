@@ -40,10 +40,7 @@ const LineWhite = styled(Line)<LineProps>`
     /*
       open
     */
-
    width: ${({open, lineWidth}) => open ? "100" : lineWidth }%;
-
-
 `;
 
 const CustomButton = styled.button`

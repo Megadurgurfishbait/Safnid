@@ -15,14 +15,14 @@ const CarouselContainer = styled(Carousel)`
   }
 `;
 
-var props = {
+var settings = {
   showArrows: false,
   showStatus: false,
   infiniteLoop: true,
   autoPlay: true,
   transitionTime: 1000,
   interval: 5000,
-  axis: "'vertical'"
+  axis: "vertical"
 } as RefAttributes<Carousel>;
 
-export { CarouselContainer, props };
+export { CarouselContainer, settings };

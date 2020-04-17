@@ -1,48 +1,38 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useContext } from "react";
 import { Switch, Route } from "react-router-dom";
-import { AllNews } from "./Components/News/AllNews";
-import { SingleNews } from "./Components/News/SingleNews/";
-import styled from "styled-components";
-import { Side } from "./Components/Sidebar";
-import { Colors as C } from "./App/Styles/";
-import { BurgerMenu } from "./Components/BurgerMenu";
-import { FrontPage } from "./Components/FrontPage";
-import { Editor } from "./Components/Admin/Editor";
+
+import { RootStoreContext } from "./App/Stores/rootStore";
+
+import * as C from "./Components";
+import * as A from "./App.styled";
 
 export default function App() {
+  const rootStore = useContext(RootStoreContext);
+  const { loadNews, loadingInitial } = rootStore.NewsStore;
+
+  useEffect(() => {
+    loadNews();
+  }, [loadNews]);
+
+  if (loadingInitial) return <C.LoadingComponent content={"Hleður Fréttir"} />;
   return (
-    <AppContainer>
-      <Side />
-      <BurgerMenu />
-      <Route exact path="/" component={FrontPage} />
+    <A.AppContainer>
+      <C.Side />
+      <C.BurgerMenu />
+      <Route exact path="/" component={C.FrontPage} />
       <Route
         path={"/(.+)"}
         render={() => (
           <Fragment>
-            <Layout>
+            <A.Layout>
               <Switch>
-                <Route path="/frettir/:id" component={SingleNews} />
-                <Route path="/frettir/" component={AllNews} />
+                <Route path="/frettir/:id" component={C.SingleNews} />
+                <Route path="/frettir/" component={C.AllNews} />
               </Switch>
-            </Layout>
+            </A.Layout>
           </Fragment>
         )}
       />
-    </AppContainer>
+    </A.AppContainer>
   );
 }
-
-const AppContainer = styled.main`
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  margin-top: 0px;
-  background-color: ${C.BROWN_LIGHT};
-  position: relative;
-`;
-
-const Layout = styled.div`
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-`;

@@ -59,10 +59,12 @@ export default class NewsStore {
   @action loadNews = async () => {
     this.loadingInitial = true;
     if(this.getFromSession()){
-      var NewsFromSession = sessionStorage.getItem("News");
-      var ParsedNews = JSON.parse(NewsFromSession!);
-      this.newsToNewsRegistry(ParsedNews);
-      this.loadingInitial = false;
+      runInAction(() => {
+        var NewsFromSession = sessionStorage.getItem("News");
+        var ParsedNews = JSON.parse(NewsFromSession!);
+        this.newsToNewsRegistry(ParsedNews);
+        this.loadingInitial = false;
+      })
     } else {
       try {
         let newsArray: INews[] = await Agent.News.List();
@@ -133,7 +135,7 @@ export default class NewsStore {
   // getFromSession(): Skilar: True | False;
   // Ef fréttir í Session, keyrir þær í newsRegistry og skilar true;
   // Annars skilar false
-  getFromSession = () => {
+   getFromSession = () => {
     if (sessionStorage.getItem("News")) {
       let fetchNews = sessionStorage.getItem('News');
       let parseNews = JSON.parse(fetchNews!);

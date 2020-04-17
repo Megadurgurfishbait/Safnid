@@ -1,2 +1,1 @@
-import Carousel from "./Carousel";
-export { Carousel };
+export { Carousel } from "./Carousel";

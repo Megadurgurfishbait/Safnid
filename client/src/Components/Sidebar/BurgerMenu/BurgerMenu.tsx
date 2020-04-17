@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import { observer } from "mobx-react-lite";
-import * as BM from "./BurgerMenu.styled";
+
 import { RootStoreContext } from "../../../App/Stores/rootStore";
+
+import * as BM from "./BurgerMenu.styled";
 import { Colors as C } from "../../../App/Styles/";
 
 const BurgerMenu = () => {

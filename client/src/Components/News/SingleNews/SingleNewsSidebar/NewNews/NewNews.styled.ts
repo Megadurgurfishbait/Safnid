@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Segment } from "semantic-ui-react";
+
 import { Colors as C, Font as F } from "../../../../../App/Styles";
 
 const Container = styled.div`

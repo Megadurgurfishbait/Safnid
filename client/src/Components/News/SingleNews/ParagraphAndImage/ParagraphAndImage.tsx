@@ -7,8 +7,10 @@ import * as PAI from "./ParagraphAndImage.styled";
 const ParagraphAndImage: React.FC = () => {
   const rootStore = useContext(RootStoreContext);
   const { news } = rootStore.NewsStore;
+
   if (!news) return <h2>Efni finnst ekki</h2>;
   const { title, text, formattedPostDate, year, images } = news;
+
   const paragraphs = text?.split(/\n/);
   return (
     <PAI.FullWidth>

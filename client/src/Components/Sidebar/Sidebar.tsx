@@ -1,6 +1,7 @@
 import React from "react";
-import { Sidebar } from "./Sidebar.styled";
 import { BurgerMenu } from "./BurgerMenu";
+import { Sidebar } from "./Sidebar.styled";
+
 export const Side: React.FC = () => (
   <Sidebar>
     <BurgerMenu />

@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { observer } from "mobx-react-lite";
 import * as NL from "./NewsList.styled";
-import { INews } from "../../../../App/Models/News";
+import { RootStoreContext } from "../../../../App/Stores/rootStore";
 
-export const NewsList: React.FC<{ getAllNews: INews[] }> = ({ getAllNews }) => {
+const NewsList = () => {
+  const rootStore = useContext(RootStoreContext);
+  const { getAllNews } = rootStore.NewsStore;
   return (
     <NL.Container>
       <NL.TitleContainer>
@@ -23,3 +26,5 @@ export const NewsList: React.FC<{ getAllNews: INews[] }> = ({ getAllNews }) => {
     </NL.Container>
   );
 };
+
+export default observer(NewsList);
