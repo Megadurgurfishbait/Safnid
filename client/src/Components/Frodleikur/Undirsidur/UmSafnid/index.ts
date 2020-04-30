@@ -1,0 +1,1 @@
+export { UmSafnid } from "./UmSafnid";

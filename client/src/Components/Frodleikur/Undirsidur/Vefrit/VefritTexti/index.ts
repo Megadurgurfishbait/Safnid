@@ -1,0 +1,1 @@
+export { VefritText } from "./VefritText";

@@ -25,12 +25,8 @@ const BackgroundImage = styled.div`
   background-size: cover;
 `;
 
-interface RelativeProps {
-  MenuOpen: boolean;
-}
-
 // prettier-ignore
-const Relative = styled.div<RelativeProps>`
+const Relative = styled.div<{MenuOpen: boolean}>`
   width: 100%;
   height: 100%;
   position: absolute;
@@ -50,11 +46,8 @@ const UL = styled.ul`
   align-items: center;
 `;
 
-interface LAProps {
-  reverse: boolean;
-}
 // prettier-ignore
-const LineAbove = styled.div<LAProps>`
+const LineAbove = styled.div<{reverse: boolean}>`
   display: flex;
   flex-direction: ${props => props.reverse && "row-reverse"};
   height: 1px;
@@ -62,11 +55,6 @@ const LineAbove = styled.div<LAProps>`
   justify-content: space-between;
 
 `;
-
-interface LineProps {
-  width: string;
-  color: string;
-}
 
 const LI = styled.li`
   display: flex;
@@ -91,6 +79,11 @@ const LBL = styled(Label)`
     color: white;
   }
 `;
+
+interface LineProps {
+  width: string;
+  color: string;
+}
 
 // prettier-ignore
 const Line = styled.div<LineProps>`

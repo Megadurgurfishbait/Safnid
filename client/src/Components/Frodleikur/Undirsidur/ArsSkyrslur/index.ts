@@ -1,0 +1,1 @@
+export { ArsSkyrslur } from "./ArsSkyrslur";

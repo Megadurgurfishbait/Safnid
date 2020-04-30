@@ -1,0 +1,1 @@
+export { Mjolkurskolinn } from "./Mjolkurskolinn";

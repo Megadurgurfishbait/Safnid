@@ -19,7 +19,7 @@ export default function App() {
     <A.AppContainer>
       <C.Side />
       <C.BurgerMenu />
-      <Route exact path="/" component={C.FrontPage} />
+      <Route exact path="/" component={C.Frodleikur} />
       <Route
         path={"/(.+)"}
         render={() => (
