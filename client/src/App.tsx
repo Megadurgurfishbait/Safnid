@@ -15,11 +15,13 @@ export default function App() {
   }, [loadNews]);
 
   if (loadingInitial) return <C.LoadingComponent content={"Hleður Fréttir"} />;
+
   return (
     <A.AppContainer>
       <C.Side />
       <C.BurgerMenu />
-      <Route exact path="/" component={C.Frodleikur} />
+      <C.Upplysingar />
+      <Route exact path="/" component={C.FrontPage} />
       <Route
         path={"/(.+)"}
         render={() => (

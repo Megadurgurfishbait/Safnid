@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Colors as C, Font as F } from "../../../../App/Styles/";
+import { Colors as C, Font as F, Scrollbar } from "../../../../App/Styles/";
 
 const FullWidth = styled.div`
   margin-top: 30px;
@@ -76,23 +76,7 @@ const Content = styled.section`
 
   min-height: 70%;
   padding-right: 50px;
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: ${C.BROWN_LIGHT};
-    border-radius: 5px;
-    box-shadow: 2px 2px 10px ${C.BROWN_DARK};
-  }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: ${C.RED};
-    border-radius: 5px;
-  }
-
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
+  ${Scrollbar};
 `;
 
 export {

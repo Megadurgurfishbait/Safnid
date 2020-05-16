@@ -1,0 +1,1 @@
+export { Upplysingar } from "./Upplysingar";

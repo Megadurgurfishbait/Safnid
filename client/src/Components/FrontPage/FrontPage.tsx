@@ -10,7 +10,7 @@ const FrontPage = () => (
     <FP.BackgroundImage />
     <FP.Gradient>
       <FP.Container>
-        <Carousel />
+        {false && <Carousel />}
         <IconAndTitle />
       </FP.Container>
     </FP.Gradient>

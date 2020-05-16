@@ -79,13 +79,14 @@ const Row = styled.div`
   padding: 0px;
   align-items: center;
   position: relative;
-  transition: transform  0.3s;
+  transition: transform  0.5s;
   transform-origin: center;
 `;
 
 // prettier-ignore
 const RowHide = styled(Row)<{open: boolean}>`
-  transition: width  0.3s;
+  transition: width  .8s;
+
   width: ${({open}) => open && "0px"};
   height: ${({open}) => open && "0px"};
 `;

@@ -4,15 +4,20 @@ import {
   TabPane as TP,
   Segment as SegmentLayout
 } from "semantic-ui-react";
-import { Layout as L, Colors as C, Font as F } from "../../App/Styles/";
+import {
+  Layout as L,
+  Colors as C,
+  Font as F,
+  Scrollbar
+} from "../../App/Styles/";
 
 const Layout = styled(L)`
   height: 100%;
-  width: 100%;
+  width: calc(100% - 60px);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   padding: 40px;
 `;
 
@@ -27,6 +32,7 @@ const TabPane = styled(TP)`
   overflow-y: scroll;
   overflow-x: hidden;
   max-height: 800px;
+  ${Scrollbar};
 `;
 
 const Segment = styled(SegmentLayout)`
